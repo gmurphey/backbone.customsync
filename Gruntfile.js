@@ -53,6 +53,14 @@ module.exports = function(grunt) {
       }
     },
 
+    heritage: {
+      options: {
+        parent: 'package.json',
+        children: ['bower.json'],
+        properties: ['name', 'version', 'description']
+      }
+    },
+
     // browser and amd tests
     mocha: {
       globals: {
@@ -96,10 +104,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-heritage');
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-simple-mocha');
 
   // Default task.
-  grunt.registerTask('default', ['test', 'concat', 'uglify']);
+  grunt.registerTask('default', ['test', 'heritage', 'concat', 'uglify']);
   grunt.registerTask('test', ['jshint', 'mocha', 'simplemocha']);
 };
