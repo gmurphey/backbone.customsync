@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/<%= pkg.name %>.js'],
+        src: ['<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       lib_test: {
-        src: ['lib/**/*.js', 'test/tests/*.js']
+        src: ['<%= pkg.name %>.js', 'test/tests/*.js']
       }
     },
 
