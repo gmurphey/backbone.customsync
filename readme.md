@@ -1,5 +1,7 @@
 # Backbone.CustomSync
 
+[![Build Status](https://travis-ci.org/gmurphey/Backbone.CustomSync.png?branch=master)](https://travis-ci.org/gmurphey/Backbone.CustomSync)
+
 Backbone.CustomSync is a Backbone.js plugin that allows you to write custom methods for all sync procedures ("read", "create", "update", and "delete"), or only those that you define.
 
 ## Features
@@ -15,7 +17,6 @@ Backbone.CustomSync can be used in both front-end and node applications.
 ### Bower
 
     bower install -S backbone.customsync
-
 
 ### NPM
 
