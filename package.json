@@ -4,6 +4,10 @@
   "description": "",
   "author": "Garrett Murphey",
   "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmurphey/Backbone.CustomSync.git"
+  },
   "main": "backbone.customsync.js",
   "scripts": {
     "test": "grunt test"
