@@ -1,7 +1,7 @@
 {
   "name": "backbone.customsync",
   "version": "0.1.0",
-  "description": "A plugin that allows you to write custom methods for individual sync procedures",
+  "description": "A Backbone extension that allows you to write custom methods for individual sync procedures.",
   "author": "Garrett Murphey",
   "license": "BSD-2-Clause",
   "repository": {

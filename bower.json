@@ -20,5 +20,5 @@
     "requirejs": "~2.1.11",
     "jquery": "~2.1.0"
   },
-  "description": "A plugin that allows you to write custom methods for individual sync procedures"
+  "description": "A Backbone extension that allows you to write custom methods for individual sync procedures."
 }
