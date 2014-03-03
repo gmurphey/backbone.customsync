@@ -32,36 +32,36 @@ var Todo = Backbone.CustomSync.Model.extend({
   // called by fetch
   readSync: function (options) {
     if (successful) {
-      options.success(response, options);
+      options.success(response);
     } else {
-      options.error(response, options);
+      options.error(response);
     }
   },
 
   // called by create and save (if the model is new)
   createSync: function (options) {
     if (successful) {
-      options.success(response, options);
+      options.success(response);
     } else {
-      options.error(response, options);
+      options.error(response);
     }
   },
 
   // called by save
   updateSync: function (options) {
     if (successful) {
-      options.success(response, options);
+      options.success(response);
     } else {
-      options.error(response, options);
+      options.error(response);
     }
   },
 
   // called by destroy
   deleteSync: function (options) {
     if (successful) {
-      options.success(response, options);
+      options.success(response);
     } else {
-      options.error(response, options);
+      options.error(response);
     }
   }
 

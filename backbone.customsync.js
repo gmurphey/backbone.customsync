@@ -39,7 +39,7 @@
       model.trigger('request', model, promise, options);
       this[method].call(this, options);
     } else {
-      options.error(model, null, options);
+      options.error(null);
     }
 
     return promise;
