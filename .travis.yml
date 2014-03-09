@@ -8,6 +8,7 @@ before_script:
 - bower install
 deploy:
   provider: npm
+  email: gmurphey@gmurphey.com
   on:
     tags: true
   api_key:
