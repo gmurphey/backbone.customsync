@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "A Backbone extension that allows you to write custom methods for individual sync procedures.",
   "author": "Garrett Murphey",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/gmurphey/Backbone.CustomSync.git"
