@@ -1,6 +1,6 @@
 {
   "name": "backbone.customsync",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A Backbone extension that allows you to write custom methods for individual sync procedures.",
   "author": "Garrett Murphey <gmurphey@gmurphey.com> (http://gmurphey.com/)",
   "license": "MIT",

@@ -1,4 +1,4 @@
-/*! backbone.customsync - v0.2.1 - 2014-03-10
+/*! backbone.customsync - v0.2.2 - 2014-03-10
 * Copyright (c) 2014 ; Licensed  */
 (function (root, factory) {
   if (typeof(define) === 'function' && define.amd) {
