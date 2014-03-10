@@ -1,4 +1,4 @@
-/*! backbone.customsync - v0.1.0 - 2014-02-28
+/*! backbone.customsync - v0.2.1 - 2014-03-10
 * Copyright (c) 2014 ; Licensed  */
 (function (root, factory) {
   if (typeof(define) === 'function' && define.amd) {
@@ -40,7 +40,7 @@
       model.trigger('request', model, promise, options);
       this[method].call(this, options);
     } else {
-      options.error(model, null, options);
+      options.error(null);
     }
 
     return promise;
