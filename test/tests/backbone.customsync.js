@@ -17,51 +17,53 @@ describe("Backbone", function () {
     });
 
     describe("Model", function () {
-      var model = Backbone.CustomSync.Model;
+      var model = Backbone.CustomSync.Model.prototype;
+      model.attributes = {};
 
       it("should expose a sync and xhrSync instance method", function () {
-        model.prototype.should.have.property("sync");
-        model.prototype.should.have.property("xhrSync");
+        model.should.have.property("sync");
+        model.should.have.property("xhrSync");
       });
 
       describe("#prototype.sync", function () {
         it("should fail if the the procedure method is not found", function (done) {
-          model.prototype.sync("read", model.prototype, {}).then(
+          model.fetch().then(
             null,
             function (m) {
-              m.should.eql(model.prototype);
+              m.should.eql(model);
               done();
             }
           );
         });
 
         it("should reject if the resulting function calls options.error", function (done) {
-          model.prototype.readSync = function (options) {
+          model.readSync = function (options) {
             options.error(null);
           };
 
-          model.prototype.sync("read", model.prototype, {}).then(
+          model.fetch().then(
             null,
             function (m) {
-              m.should.eql(model.prototype);
+              m.should.eql(model);
               done();
             }
           );
 
-          delete model.prototype.readSync;
+          delete model.readSync;
         });
 
         it("should resolve if the resulting function calls options.success", function (done) {
-          model.prototype.readSync = function (options) {
-            options.success({});
+          model.readSync = function (options) {
+            options.success({ name: "garrett" });
           };
 
-          model.prototype.sync("read", model.prototype, {}).then(function (m) {
-            m.should.eql(model.prototype);
+          model.fetch().then(function (m) {
+            m.should.eql(model);
+            m.get("name").should.eql("garrett");
             done();
           });
 
-          delete model.prototype.readSync;
+          delete model.readSync;
         });
       });
 
@@ -77,51 +79,56 @@ describe("Backbone", function () {
     });
 
     describe("Collection", function () {
-      var collection = Backbone.CustomSync.Collection;
+      var collection = Backbone.CustomSync.Collection.prototype;
+
+      collection.length = 0;
+      collection.models = [];
+      collection._byId = {};
 
       it("should expose a sync and xhrSync instance method", function () {
-        collection.prototype.should.have.property("sync");
-        collection.prototype.should.have.property("xhrSync");
+        collection.should.have.property("sync");
+        collection.should.have.property("xhrSync");
       });
 
       describe("#prototype.sync", function () {
         it("should fail if the the procedure method is not found", function (done) {
-          collection.prototype.sync("read", collection.prototype, {}).then(
+          collection.fetch().then(
             null,
             function (c) {
-              c.should.eql(collection.prototype);
+              c.should.eql(collection);
               done();
             }
           );
         });
 
         it("should reject if the resulting function calls options.error", function (done) {
-          collection.prototype.readSync = function (options) {
+          collection.readSync = function (options) {
             options.error(null);
           };
 
-          collection.prototype.sync("read", collection.prototype, {}).then(
+          collection.fetch().then(
             null,
             function (c) {
-              c.should.eql(collection.prototype);
+              c.should.eql(collection);
               done();
             }
           );
 
-          delete collection.prototype.readSync;
+          delete collection.readSync;
         });
 
         it("should resolve if the resulting function calls options.success", function (done) {
-          collection.prototype.readSync = function (options) {
-            options.success({});
+          collection.readSync = function (options) {
+            options.success([{ name: "garrett" }, { name: "murphey" }]);
           };
 
-          collection.prototype.sync("read", collection.prototype, {}).then(function (c) {
-            c.should.eql(collection.prototype);
+          collection.fetch().then(function (c) {
+            c.should.eql(collection);
+            c.length.should.eql(2);
             done();
           });
 
-          delete collection.prototype.readSync;
+          delete collection.readSync;
         });
       });
 
