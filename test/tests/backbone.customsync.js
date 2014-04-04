@@ -37,7 +37,7 @@ describe("Backbone", function () {
 
         it("should reject if the resulting function calls options.error", function (done) {
           model.prototype.readSync = function (options) {
-            options.error(this, null, options);
+            options.error(null);
           };
 
           model.prototype.sync("read", model.prototype, {}).then(
@@ -53,7 +53,7 @@ describe("Backbone", function () {
 
         it("should resolve if the resulting function calls options.success", function (done) {
           model.prototype.readSync = function (options) {
-            options.success(this, {}, options);
+            options.success({});
           };
 
           model.prototype.sync("read", model.prototype, {}).then(function (m) {
@@ -97,7 +97,7 @@ describe("Backbone", function () {
 
         it("should reject if the resulting function calls options.error", function (done) {
           collection.prototype.readSync = function (options) {
-            options.error(this, null, options);
+            options.error(null);
           };
 
           collection.prototype.sync("read", collection.prototype, {}).then(
@@ -113,7 +113,7 @@ describe("Backbone", function () {
 
         it("should resolve if the resulting function calls options.success", function (done) {
           collection.prototype.readSync = function (options) {
-            options.success(this, {}, options);
+            options.success({});
           };
 
           collection.prototype.sync("read", collection.prototype, {}).then(function (c) {

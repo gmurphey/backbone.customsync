@@ -1,4 +1,4 @@
-/*! backbone.customsync - v0.2.2 - 2014-03-10
+/*! backbone.customsync - v0.2.2 - 2014-04-04
 * Copyright (c) 2014 ; Licensed  */
 (function (root, factory) {
   if (typeof(define) === 'function' && define.amd) {
@@ -18,25 +18,26 @@
   var customSync = function (type, model, options) {
     var dfd = new Deferred(),
         promise = (typeof(dfd.promise) === 'function') ? dfd.promise() : dfd.promise,
-        method = type + "Sync",
+        method = type + 'Sync',
         success = options.success,
         error = options.error;
 
     options.success = function (response) {
       if (success) {
-        success(model, response, options);
+        success(response);
       }
       dfd.resolve(model);
     };
 
     options.error = function (response) {
       if (error) {
-        error(model, response, options);
+        error(response);
       }
+
       dfd.reject(model);
     };
 
-    if (typeof(this[method]) === "function") {
+    if (typeof(this[method]) === 'function') {
       model.trigger('request', model, promise, options);
       this[method].call(this, options);
     } else {
