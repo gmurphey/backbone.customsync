@@ -1,6 +1,6 @@
 # Backbone.CustomSync
 
-[![Build Status](https://travis-ci.org/gmurphey/backbone.customsync.png?branch=master)](https://travis-ci.org/gmurphey/backbone.customsync)
+[![Build Status](http://img.shields.io/travis/gmurphey/backbone.customsync.svg)](https://travis-ci.org/gmurphey/backbone.customsync) [![Gittip](http://img.shields.io/gittip/gmurphey.svg)](https://www.gittip.com/gmurphey/)
 
 Backbone.CustomSync is a Backbone.js plugin that allows you to write custom methods for all sync procedures ("read", "create", "update", and "delete"), or only those that you define.
 
