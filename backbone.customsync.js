@@ -21,16 +21,16 @@
         success = options.success,
         error = options.error;
 
-    options.success = function () {
+    options.success = function (resp) {
       if (success) {
-        success.apply(this, arguments);
+        success(resp);
       }
       dfd.resolve(model);
     };
 
-    options.error = function () {
+    options.error = function (resp) {
       if (error) {
-        error.apply(this, arguments);
+        error(resp);
       }
 
       dfd.reject(model);
