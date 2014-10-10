@@ -1,5 +1,5 @@
 /*! backbone.customsync - v1.2.1 - 2014-10-10
-* Copyright (c) 2014 ; Licensed  */
+* Copyright (c) 2014 Garrett Murphey <gmurphey@gmurphey.com> (http://gmurphey.com/); Licensed MIT */
 (function (root, factory) {
   if (typeof(define) === 'function' && define.amd) {
     define(['backbone', 'underscore', 'jquery'], function (Backbone, _, jQuery) {
