@@ -9,7 +9,5 @@ before_script:
 deploy:
   provider: npm
   email: gmurphey@gmurphey.com
-  on:
-    tags: true
   api_key:
     secure: WICyV7S81gK7uDDckUbYB6XmSFfOCn4MNf/FoEoq8PeXtt9kJmWhgqWU59Cda+A4ZoZLNGeZkKYcJNXlN557+gaem55Co4k7kKCNbqzDDuKMZiLoO2ph0Vs/pni36XRUU0A8wkVPQZDW6Fpjqv5Uz1RBnKMsdwPiXJULk7y8V38=
